@@ -71,6 +71,7 @@ ABCDE
 7. Downloading the GRIT dataset takes several hours. Also, unzipping and processing the dataset on Google Drive consumes a significant amount of time too.
 8. Accessing a Google Drive folder with a larger number of files is terribly slow. Even download.sh for grit_official was broken to unpack the zip file successfully so many of the images are missing while they are supposed to be in the directory - The solution is copy the zip file from the mounted virtual drive folder in Colab and unpack the files in the actual directory on the machine with cloud processors running.
 9. GRIT need to submit the zip file to be graded and it requires approval by a human which may makes waiting time.
+10. fiftyone and MongoDB dependencies issue with M1 chip. Github issue: https://github.com/voxel51/fiftyone/issues/1165
 
 ## Summary
 

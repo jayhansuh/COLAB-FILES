@@ -9,9 +9,20 @@ Then, I calculate its evaluation metric (mAP), and determine its zero-shot metri
 * Google Colab equipped with an A100 GPU
 * Google Drive 2TB plan
 * GRIT benchmark, including ImageNet, COCO, ADE20K, and Visual Genome (VG) dataset
-* adapting-CLIP model, which uses Flickr and Visual Genome (VG) images along with Zero-Shot Generalization (ZSG) annotations.
 
-## Model Inference
+
+## Variants for object detection(localization) tasks
+
+* [adapting-CLIP](https://github.com/pals-ttic/adapting-CLIP) model by Jiahao Li et al. ([paper](https://arxiv.org/pdf/2204.03647.pdf))
+> which uses Flickr and Visual Genome (VG) images along with Zero-Shot Generalization (ZSG) annotations. This model focuses on adapting the original CLIP model without any further training.
+* [OWL-ViT](https://github.com/google-research/scenic/tree/main/scenic/projects/owl_vit) by GOOGLE ([paper](https://arxiv.org/pdf/2101.01169.pdf))
+> Vision Transformer for Open-World Localization(OWL-ViT) is actually a variation of the Vision Transformer(ViT) model that focuse computational efficiency of original ViT model. Thus, this is not a CLIP variant. 
+* [RegionCLIP](https://github.com/microsoft/RegionCLIP) by Microsoft ([paper](https://arxiv.org/abs/2112.09106))
+> RegionCLIP is an extension of the CLIP model that learns region-level visual representations, enabling fine-grained alignment between image regions and textual concepts. This supports tasks like zero-shot and open-vocabulary object detection. The model leverages pretraining, zero-shot inference, and transfer learning to achieve state-of-the-art results in its target tasks.
+
+# Adapting-CLIP
+
+## Configuration
 The below configuration is the setup used for the adapting-CLIP model.
 ```python
 model = SLICViT
@@ -31,13 +42,23 @@ iou_thr = 0.5
 model = model(**args).cuda()
 ```
 
+## Inference
 The adapting-CLIP model's performance on the localization task is illustrated in the example images below. Bounding boxes are color-coded as follows:
 * Red: predicted bounding box
 * Blue: ground truth bounding box
 
 ![adCLIP_4by4](https://user-images.githubusercontent.com/84216960/232256051-528543a1-4035-4754-a209-c2273e0ba586.png)
+## GRIT Benchmark
+ABCDE
 
+# RegionCLIP
 
+## Configuration
+
+## Inference
+
+## GRIT Benchmark
+ABCDE
 ## Troubleshooting
 
 1. The **cudatoolkit** is not supported on **Apple silicon chips** (current local machine uses an ARM M1 chip).

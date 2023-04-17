@@ -69,6 +69,8 @@ ABCDE
 5. Unzipping tar files and uploading images to Google Drive is inefficient (too slow). It is better to upload a **tar.gz file** and unzip it within a Colab session.
 6. The GRIT dataset has considerable storage requirements: **COCO (25GB), ImageNet (155GB?), ADE20K (?), and VG (15GB)**, which requires a Google Drive storage upgrade.
 7. Downloading the GRIT dataset takes several hours. Also, unzipping and processing the dataset on Google Drive consumes a significant amount of time too.
+8. Accessing a Google Drive folder with a larger number of files is terribly slow. Even download.sh for grit_official was broken to unpack the zip file successfully so many of the images are missing while they are supposed to be in the directory - The solution is copy the zip file from the mounted virtual drive folder in Colab and unpack the files in the actual directory on the machine with cloud processors running.
+9. GRIT need to submit the zip file to be graded and it requires approval by a human which may makes waiting time.
 
 ## Summary
 

@@ -58,8 +58,8 @@ Tasks: [**'localization'**, 'categorization', 'vqa', 'refexp', 'segmentation', '
 
 Subsets: [**'ablation'**, 'test']
 
-```JSON
-// Example of the 'GRIT/samples/ablation/localization.json' element
+```python
+# Example of the 'GRIT/samples/ablation/localization.json' element
 [
     {
         "example_id": "coco_loc_test-reserve_spoon_527067",
@@ -69,11 +69,11 @@ Subsets: [**'ablation'**, 'test']
         "task_name": "localization",
         "task_query": "spoon"
     }
-    // , ...
+    , # ...
 ]
 ```
-```JSON
-// Example of the localization.json submission(computed output) file
+```python
+# Example of the localization.json submission(computed output) file
 [
     {
         "example_id": "coco_loc_test-reserve_spoon_527067",
@@ -87,7 +87,7 @@ Subsets: [**'ablation'**, 'test']
             ]
         ]
     }
-    // , ...
+    , # ...
 ]
 ```
 

@@ -108,7 +108,9 @@ For parallelization, what I have for now is just a very simple way to do that - 
 
 The inference results are saved in the [`ablation/localization.json`](ablation/localization.json) file.
 
-The adapting-CLIP model's performance on the GRIT benchmark is illustrated in the table below. The model's mAP score is (???). The model's zero-shot score is (???).
+The adapting-CLIP model's performance on the GRIT benchmark is illustrated in the table below. The model's localization score is 21.48 ± 0.5 as shown below.
+
+![Screenshot 2023-04-18 at 7 38 57 PM](https://user-images.githubusercontent.com/84216960/232936744-8e10499d-d3f7-46cb-bc24-eca84793dec4.png)
 
 ---
 # RegionCLIP
@@ -118,7 +120,6 @@ The adapting-CLIP model's performance on the GRIT benchmark is illustrated in th
 ## Inference
 
 ## GRIT Benchmark
-ABCDE
 
 ---
 # Troubleshooting

@@ -48,7 +48,7 @@ The adapting-CLIP model's performance on the localization task is illustrated in
 * Red: predicted bounding box
 * Blue: ground truth bounding box
 
-|![adCLIP_4by4](https://user-images.githubusercontent.com/84216960/232256051-528543a1-4035-4754-a209-c2273e0ba586.png)|
+|![adCLIP_4by4](https://user-images.githubusercontent.com/84216960/232969993-f76df39d-d6f9-4358-a06a-0ed4c72d7c4b.png)|
 |:--:|
 |adapting-CLIP model's performance visualized by [`adCLIP-visualizer.ipynb`](adCLIP-visualizer.ipynb)|
 
@@ -113,16 +113,16 @@ The adapting-CLIP model's performance on the GRIT benchmark is illustrated in th
 ![Screenshot 2023-04-18 at 7 38 57 PM](https://user-images.githubusercontent.com/84216960/232936744-8e10499d-d3f7-46cb-bc24-eca84793dec4.png)
 
 ---
-# RegionCLIP
+# OWL-ViT
 
-## Configuration
+While this is not a CLIP variant, the visualization is also done for the OWL-ViT model for comparison. Unfortunately, due to the high computation cost for GRIT benchmark dataset, there is no quantitative scores to be compared but visualizing the same set of 16 images shows the OWL-ViT clearly has a better performance than adapting CLIP model.
 
-## Inference
-
-## GRIT Benchmark
+|![OWLVIT_4by4](https://user-images.githubusercontent.com/84216960/232971453-33113ff5-8898-4162-969e-d94b46ee778d.png)|
+|:--:|
+|OWL-ViT model's performance visualized by [`OWL-ViT-visualizer.ipynb`](OWL-ViT-visualizer.ipynb)|
 
 ---
-# Troubleshooting
+# Troubleshooting Notes
 
 1. The **cudatoolkit** is not supported on **Apple silicon chips** (current local machine uses an ARM M1 chip).
 2. While there are some methods to use **conda or venv on Colab**, they are not very convenient. Many Colab Jupyter example notebooks rely on a fresh Python runtime (a session or kernel) for individual files and install dependencies every time the notebook starts to run.
@@ -138,6 +138,7 @@ The adapting-CLIP model's performance on the GRIT benchmark is illustrated in th
 11. adapting CLIP model is not optimized for inference. It is not working in the `model.eval()` mode. It throws an integer error but I couldn't solve it yet.
 12. ~5GB GPU memory usage is too small for using A100 GPU. It is better to use V100 GPU for this model. Or, it might be a way to load multiple models working parallely in the same GPU memory, but I haven't figured it out yet.
 13. Overall ~20 hours of inference time was not expected initially.
+14. RegionCLIP does not work on the Google Colab environment which raise a pip install error which seems not obvious what is the issue. Also documentation seems to have many steps so it will be taking few extra days to make it running for the GRIT benchmark. Overall adapting CLIP is easy to use but having a poor performance and OWL ViT is great on performance but not based on CLIP(PyTorch) - they are based on Vision Transoformer using TensorFlow.
 
 ---
 # References
@@ -148,3 +149,4 @@ The following repositories were used as references in this project:
 2. GRIT official: [https://github.com/allenai/grit_official](https://github.com/allenai/grit_official)
 3. adapting-CLIP: [https://github.com/pals-ttic/adapting-CLIP](https://github.com/pals-ttic/adapting-CLIP)
 4. RegionCLIP: [https://github.com/microsoft/RegionCLIP](https://github.com/microsoft/RegionCLIP)
+5. OWL-ViT: [https://github.com/google-research/scenic/tree/main/scenic/projects/owl_vit](https://github.com/google-research/scenic/tree/main/scenic/projects/owl_vit)
